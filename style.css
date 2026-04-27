@@ -1,4 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+
+  --bg: #050914;
+
+  --panel: rgba(255,255,255,0.04);
+
+  --border: rgba(255,255,255,0.08);
+
+  --text: #e5e7eb;
+
+  --muted: #94a3b8;
+
+  --accent: #38bdf8;
+
+}
+
+* {
+
+  box-sizing: border-box;
+
+}
 
 html {
 
@@ -10,11 +32,11 @@ body {
 
   margin: 0;
 
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 
-  background: radial-gradient(circle at top, #0f172a, #0b1220 60%);
+  background: radial-gradient(circle at top, #0f172a, var(--bg) 65%);
 
-  color: white;
+  color: var(--text);
 
 }
 
@@ -28,13 +50,13 @@ header {
 
   align-items: center;
 
-  padding: 18px 50px;
+  padding: 20px 60px;
 
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(10, 15, 30, 0.6);
 
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(20px);
 
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--border);
 
   position: sticky;
 
@@ -44,7 +66,7 @@ header {
 
 }
 
-/* LOGO SYSTEM */
+/* LOGO */
 
 .logo {
 
@@ -52,15 +74,15 @@ header {
 
   align-items: center;
 
-  gap: 16px;
+  gap: 18px;
 
 }
 
-.logo-box {
+.logo-mark {
 
-  width: 84px;
+  width: 110px;
 
-  height: 84px;
+  height: 110px;
 
   display: flex;
 
@@ -68,21 +90,27 @@ header {
 
   justify-content: center;
 
-  background: rgba(56, 189, 248, 0.10);
+  background: radial-gradient(circle at top left,
 
-  border: 1px solid rgba(56, 189, 248, 0.25);
+    rgba(56,189,248,0.25),
 
-  border-radius: 18px;
+    rgba(15,23,42,0.9)
 
-  box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+  );
+
+  border: 1px solid rgba(56,189,248,0.35);
+
+  border-radius: 22px;
+
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
 
 }
 
-.logo-box img {
+.logo-mark img {
 
-  width: 64px;
+  width: 85px;
 
-  height: 64px;
+  height: 85px;
 
   object-fit: contain;
 
@@ -100,11 +128,11 @@ header {
 
 .brand-title {
 
-  font-size: 18px;
+  font-size: 20px;
 
   font-weight: 700;
 
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 
 }
 
@@ -112,7 +140,7 @@ header {
 
   font-size: 12px;
 
-  color: #94a3b8;
+  color: var(--muted);
 
   letter-spacing: 1px;
 
@@ -122,7 +150,7 @@ header {
 
 nav a {
 
-  color: #cbd5e1;
+  color: var(--muted);
 
   text-decoration: none;
 
@@ -132,19 +160,19 @@ nav a {
 
   border-radius: 12px;
 
-  font-size: 14px;
-
-  transition: 0.25s;
-
   border: 1px solid transparent;
+
+  transition: 0.2s ease;
+
+  font-size: 14px;
 
 }
 
 nav a:hover {
 
-  background: rgba(56, 189, 248, 0.15);
+  background: rgba(56,189,248,0.12);
 
-  border: 1px solid rgba(56, 189, 248, 0.35);
+  border: 1px solid rgba(56,189,248,0.35);
 
   color: white;
 
@@ -158,39 +186,43 @@ nav a:hover {
 
   text-align: center;
 
-  padding: 150px 20px 100px;
+  padding: 170px 20px 120px;
 
 }
 
 .hero h1 {
 
-  font-size: 64px;
+  font-size: 70px;
 
-  letter-spacing: -1px;
+  letter-spacing: -2px;
 
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 
 }
 
 .hero p {
 
-  color: #94a3b8;
+  color: var(--muted);
 
-  max-width: 700px;
+  max-width: 750px;
 
   margin: auto;
 
   font-size: 18px;
 
+  line-height: 1.7;
+
 }
+
+/* BUTTON */
 
 .btn {
 
   display: inline-block;
 
-  margin-top: 28px;
+  margin-top: 30px;
 
-  padding: 14px 32px;
+  padding: 15px 36px;
 
   background: linear-gradient(135deg, #38bdf8, #0ea5e9);
 
@@ -202,33 +234,43 @@ nav a:hover {
 
   text-decoration: none;
 
+  box-shadow: 0 18px 45px rgba(56,189,248,0.25);
+
+  transition: 0.25s ease;
+
+}
+
+.btn:hover {
+
+  transform: translateY(-3px) scale(1.04);
+
 }
 
 /* SECTIONS */
 
 .section {
 
-  padding: 100px 20px;
+  padding: 120px 20px;
 
   text-align: center;
 
 }
 
-.section h1, .section h2 {
+.section h1 {
 
-  font-size: 36px;
+  font-size: 42px;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
 }
 
 .section p {
 
-  max-width: 800px;
+  max-width: 850px;
 
   margin: auto;
 
-  color: #94a3b8;
+  color: var(--muted);
 
   line-height: 1.8;
 
@@ -242,35 +284,37 @@ nav a:hover {
 
   justify-content: center;
 
-  gap: 22px;
+  gap: 26px;
 
   flex-wrap: wrap;
 
-  margin-top: 35px;
+  margin-top: 45px;
 
 }
 
 .card {
 
-  background: rgba(17, 24, 39, 0.7);
+  width: 270px;
 
-  border: 1px solid rgba(255,255,255,0.06);
+  padding: 32px;
 
-  padding: 28px;
+  border-radius: 20px;
 
-  border-radius: 18px;
+  background: var(--panel);
 
-  width: 250px;
+  border: 1px solid var(--border);
 
-  transition: 0.2s;
+  transition: 0.25s ease;
 
 }
 
 .card:hover {
 
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 
-  border-color: rgba(56, 189, 248, 0.4);
+  border-color: rgba(56,189,248,0.45);
+
+  background: rgba(255,255,255,0.06);
 
 }
 
@@ -278,7 +322,7 @@ nav a:hover {
 
 form {
 
-  max-width: 500px;
+  max-width: 520px;
 
   margin: auto;
 
@@ -292,25 +336,15 @@ input, textarea {
 
   margin: 10px 0;
 
-  padding: 14px;
+  padding: 15px;
 
   border-radius: 12px;
 
-  border: none;
+  border: 1px solid var(--border);
 
-  background: #0f172a;
+  background: rgba(15, 23, 42, 0.85);
 
   color: white;
-
-  border: 1px solid rgba(255,255,255,0.08);
-
-}
-
-button.btn {
-
-  border: none;
-
-  cursor: pointer;
 
 }
 
@@ -320,12 +354,12 @@ footer {
 
   text-align: center;
 
-  padding: 30px;
+  padding: 35px;
 
   font-size: 13px;
 
-  color: #64748b;
+  color: var(--muted);
 
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--border);
 
 }
