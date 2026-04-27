@@ -1,143 +1,331 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 html {
+
   scroll-behavior: smooth;
+
 }
 
 body {
+
   margin: 0;
+
   font-family: 'Inter', sans-serif;
+
   background: radial-gradient(circle at top, #0f172a, #0b1220 60%);
+
   color: white;
+
 }
 
 /* HEADER */
+
 header {
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
   padding: 18px 50px;
+
   background: rgba(15, 23, 42, 0.6);
+
   backdrop-filter: blur(18px);
+
   border-bottom: 1px solid rgba(255,255,255,0.06);
+
   position: sticky;
+
   top: 0;
+
   z-index: 1000;
+
 }
 
-/* LOGO WRAPPER */
+/* LOGO SYSTEM */
+
 .logo {
+
   display: flex;
+
   align-items: center;
+
   gap: 16px;
+
 }
 
-/* BIG BRAND BOX */
 .logo-box {
-  width: 86px;
-  height: 86px;
+
+  width: 84px;
+
+  height: 84px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   background: rgba(56, 189, 248, 0.10);
+
   border: 1px solid rgba(56, 189, 248, 0.25);
+
   border-radius: 18px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+
+  box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+
 }
 
-/* LOGO IMAGE */
 .logo-box img {
-  width: 62px;
-  height: 62px;
+
+  width: 64px;
+
+  height: 64px;
+
   object-fit: contain;
+
 }
 
-/* TEXT BRAND */
 .brand-text {
+
   display: flex;
+
   flex-direction: column;
+
   line-height: 1.1;
+
 }
 
 .brand-title {
+
   font-size: 18px;
+
   font-weight: 700;
+
   letter-spacing: 2px;
+
 }
 
 .brand-sub {
+
   font-size: 12px;
+
   color: #94a3b8;
+
   letter-spacing: 1px;
+
 }
 
-/* NAV BUTTONS */
+/* NAV */
+
 nav a {
+
   color: #cbd5e1;
+
   text-decoration: none;
+
   margin-left: 10px;
+
   padding: 10px 16px;
+
   border-radius: 12px;
+
   font-size: 14px;
+
   transition: 0.25s;
+
   border: 1px solid transparent;
+
 }
 
 nav a:hover {
+
   background: rgba(56, 189, 248, 0.15);
-  border: 1px solid rgba(56, 189, 248, 0.4);
+
+  border: 1px solid rgba(56, 189, 248, 0.35);
+
   color: white;
+
   transform: translateY(-1px);
+
 }
 
 /* HERO */
+
 .hero {
+
   text-align: center;
+
   padding: 150px 20px 100px;
+
 }
 
 .hero h1 {
+
   font-size: 64px;
-  font-weight: 700;
+
   letter-spacing: -1px;
+
   margin-bottom: 12px;
+
 }
 
 .hero p {
+
   color: #94a3b8;
-  max-width: 720px;
+
+  max-width: 700px;
+
   margin: auto;
+
   font-size: 18px;
-  line-height: 1.7;
+
 }
 
-/* BUTTON */
 .btn {
-  display: inline-block;
-  margin-top: 28px;
-  padding: 14px 34px;
-  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-  color: black;
-  font-weight: 700;
-  border-radius: 14px;
-  text-decoration: none;
-  transition: 0.2s;
-}
 
-.btn:hover {
-  transform: scale(1.05);
+  display: inline-block;
+
+  margin-top: 28px;
+
+  padding: 14px 32px;
+
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+
+  color: black;
+
+  font-weight: 700;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+
 }
 
 /* SECTIONS */
+
 .section {
+
   padding: 100px 20px;
+
   text-align: center;
+
 }
 
 .section h1, .section h2 {
+
   font-size: 36px;
+
   margin-bottom: 20px;
+
 }
 
 .section p {
-  max-width: 850
+
+  max-width: 800px;
+
+  margin: auto;
+
+  color: #94a3b8;
+
+  line-height: 1.8;
+
+}
+
+/* CARDS */
+
+.cards {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 22px;
+
+  flex-wrap: wrap;
+
+  margin-top: 35px;
+
+}
+
+.card {
+
+  background: rgba(17, 24, 39, 0.7);
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  padding: 28px;
+
+  border-radius: 18px;
+
+  width: 250px;
+
+  transition: 0.2s;
+
+}
+
+.card:hover {
+
+  transform: translateY(-5px);
+
+  border-color: rgba(56, 189, 248, 0.4);
+
+}
+
+/* FORM */
+
+form {
+
+  max-width: 500px;
+
+  margin: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+input, textarea {
+
+  margin: 10px 0;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  border: none;
+
+  background: #0f172a;
+
+  color: white;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+}
+
+button.btn {
+
+  border: none;
+
+  cursor: pointer;
+
+}
+
+/* FOOTER */
+
+footer {
+
+  text-align: center;
+
+  padding: 30px;
+
+  font-size: 13px;
+
+  color: #64748b;
+
+  border-top: 1px solid rgba(255,255,255,0.06);
+
+}
