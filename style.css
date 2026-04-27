@@ -1,42 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-:root {
-
-  --bg: #050914;
-
-  --panel: rgba(255,255,255,0.04);
-
-  --border: rgba(255,255,255,0.08);
-
-  --text: #e5e7eb;
-
-  --muted: #94a3b8;
-
-  --accent: #38bdf8;
-
-}
-
-* {
-
-  box-sizing: border-box;
-
-}
-
-html {
-
-  scroll-behavior: smooth;
-
-}
-
 body {
 
   margin: 0;
 
-  font-family: "Inter", sans-serif;
+  font-family: "Arial", sans-serif;
 
-  background: radial-gradient(circle at top, #0f172a, var(--bg) 65%);
+  background: radial-gradient(circle at top, #111827, #05070f);
 
-  color: var(--text);
+  color: white;
+
+  overflow-x: hidden;
 
 }
 
@@ -50,23 +22,21 @@ header {
 
   align-items: center;
 
-  padding: 20px 60px;
-
-  background: rgba(10, 15, 30, 0.6);
-
-  backdrop-filter: blur(20px);
-
-  border-bottom: 1px solid var(--border);
+  padding: 25px 60px;
 
   position: sticky;
 
   top: 0;
 
-  z-index: 1000;
+  background: rgba(10, 12, 20, 0.6);
+
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+
+  z-index: 10;
 
 }
-
-/* LOGO */
 
 .logo {
 
@@ -74,65 +44,27 @@ header {
 
   align-items: center;
 
-  gap: 18px;
+  gap: 15px;
 
 }
 
-.logo-mark {
+.logo img {
 
-  width: 110px;
+  height: 65px;
 
-  height: 110px;
+  width: auto;
 
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background: radial-gradient(circle at top left,
-
-    rgba(56,189,248,0.25),
-
-    rgba(15,23,42,0.9)
-
-  );
-
-  border: 1px solid rgba(56,189,248,0.35);
-
-  border-radius: 22px;
-
-  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
-
-}
-
-.logo-mark img {
-
-  width: 85px;
-
-  height: 85px;
-
-  object-fit: contain;
-
-}
-
-.brand-text {
-
-  display: flex;
-
-  flex-direction: column;
-
-  line-height: 1.1;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
 
 }
 
 .brand-title {
 
-  font-size: 20px;
+  font-size: 18px;
 
-  font-weight: 700;
+  font-weight: bold;
 
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 
 }
 
@@ -140,43 +72,55 @@ header {
 
   font-size: 12px;
 
-  color: var(--muted);
-
-  letter-spacing: 1px;
+  opacity: 0.6;
 
 }
 
-/* NAV */
-
 nav a {
 
-  color: var(--muted);
+  color: white;
 
   text-decoration: none;
 
-  margin-left: 10px;
+  margin-left: 25px;
 
-  padding: 10px 16px;
+  opacity: 0.7;
 
-  border-radius: 12px;
+  position: relative;
 
-  border: 1px solid transparent;
-
-  transition: 0.2s ease;
-
-  font-size: 14px;
+  transition: 0.3s;
 
 }
 
 nav a:hover {
 
-  background: rgba(56,189,248,0.12);
+  opacity: 1;
 
-  border: 1px solid rgba(56,189,248,0.35);
+}
 
-  color: white;
+nav a::after {
 
-  transform: translateY(-1px);
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -5px;
+
+  width: 0%;
+
+  height: 2px;
+
+  background: white;
+
+  transition: 0.3s;
+
+}
+
+nav a:hover::after {
+
+  width: 100%;
 
 }
 
@@ -186,31 +130,37 @@ nav a:hover {
 
   text-align: center;
 
-  padding: 170px 20px 120px;
+  padding: 140px 20px 90px;
 
 }
 
 .hero h1 {
 
-  font-size: 70px;
+  font-size: 60px;
 
-  letter-spacing: -2px;
+  margin-bottom: 20px;
 
-  margin-bottom: 15px;
+  letter-spacing: -1px;
+
+  background: linear-gradient(90deg, #ffffff, #8b9cff);
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
 
 }
 
 .hero p {
 
-  color: var(--muted);
-
-  max-width: 750px;
+  max-width: 650px;
 
   margin: auto;
 
-  font-size: 18px;
+  opacity: 0.75;
 
   line-height: 1.7;
+
+  font-size: 16px;
 
 }
 
@@ -220,29 +170,31 @@ nav a:hover {
 
   display: inline-block;
 
-  margin-top: 30px;
+  padding: 14px 30px;
 
-  padding: 15px 36px;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
 
-  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-
-  color: black;
-
-  font-weight: 700;
-
-  border-radius: 14px;
+  color: white;
 
   text-decoration: none;
 
-  box-shadow: 0 18px 45px rgba(56,189,248,0.25);
+  font-weight: bold;
 
-  transition: 0.25s ease;
+  border-radius: 10px;
+
+  margin-top: 25px;
+
+  transition: 0.3s;
+
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
 
 }
 
 .btn:hover {
 
-  transform: translateY(-3px) scale(1.04);
+  transform: translateY(-3px) scale(1.03);
+
+  box-shadow: 0 15px 35px rgba(79, 70, 229, 0.5);
 
 }
 
@@ -250,7 +202,7 @@ nav a:hover {
 
 .section {
 
-  padding: 120px 20px;
+  padding: 90px 20px;
 
   text-align: center;
 
@@ -258,21 +210,9 @@ nav a:hover {
 
 .section h1 {
 
-  font-size: 42px;
+  font-size: 38px;
 
-  margin-bottom: 18px;
-
-}
-
-.section p {
-
-  max-width: 850px;
-
-  margin: auto;
-
-  color: var(--muted);
-
-  line-height: 1.8;
+  margin-bottom: 10px;
 
 }
 
@@ -282,39 +222,39 @@ nav a:hover {
 
   display: flex;
 
+  gap: 25px;
+
   justify-content: center;
 
-  gap: 26px;
+  margin-top: 50px;
 
   flex-wrap: wrap;
-
-  margin-top: 45px;
 
 }
 
 .card {
 
-  width: 270px;
+  background: rgba(255,255,255,0.05);
 
-  padding: 32px;
+  border: 1px solid rgba(255,255,255,0.08);
 
-  border-radius: 20px;
+  padding: 35px;
 
-  background: var(--panel);
+  border-radius: 16px;
 
-  border: 1px solid var(--border);
+  width: 280px;
 
-  transition: 0.25s ease;
+  backdrop-filter: blur(10px);
+
+  transition: 0.4s;
 
 }
 
 .card:hover {
 
-  transform: translateY(-8px);
+  transform: translateY(-10px);
 
-  border-color: rgba(56,189,248,0.45);
-
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.08);
 
 }
 
@@ -322,7 +262,7 @@ nav a:hover {
 
 form {
 
-  max-width: 520px;
+  max-width: 500px;
 
   margin: auto;
 
@@ -330,19 +270,21 @@ form {
 
   flex-direction: column;
 
+  gap: 15px;
+
 }
 
 input, textarea {
 
-  margin: 10px 0;
+  padding: 14px;
 
-  padding: 15px;
+  border-radius: 10px;
 
-  border-radius: 12px;
+  border: none;
 
-  border: 1px solid var(--border);
+  outline: none;
 
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(255,255,255,0.07);
 
   color: white;
 
@@ -354,12 +296,10 @@ footer {
 
   text-align: center;
 
-  padding: 35px;
+  padding: 50px;
 
-  font-size: 13px;
+  opacity: 0.5;
 
-  color: var(--muted);
-
-  border-top: 1px solid var(--border);
+  font-size: 14px;
 
 }
