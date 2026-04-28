@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TH WEB STUDIO | Premium Digital Design</title>
+    <title>TH WEB STUDIO | Elite Digital Design</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="./logo.PNG" alt="TH Web Studio Logo">
+                <img src="./logo.PNG" alt="Logo">
                 <div class="logo-text">
                     <span class="brand-title">TH WEB STUDIO</span>
-                    <span class="brand-sub">Digital Atelier</span>
+                    <span class="brand-sub">Digital Design Studio</span>
                 </div>
             </div>
-            <div class="menu-trigger" id="menuTrigger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <div class="menu-trigger" id="menuTrigger"><span class="bar"></span><span class="bar"></span></div>
         </div>
     </header>
 
@@ -30,45 +26,49 @@
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="about.html">About</a>
-            <a href="contact.html" class="menu-cta">Start Project</a>
+            <a href="contact.html">Inquire</a>
         </div>
     </nav>
 
     <main>
         <section class="hero">
             <div class="container">
-                <span class="overline">The New Standard of Excellence</span>
-                <h1>We build websites that <br><span class="italic-serif">command</span> attention.</h1>
-                <p>Bespoke digital experiences crafted for high-growth brands and elite service providers.</p>
-                <div class="hero-actions">
-                    <a href="contact.html" class="btn-elite">Experience the Difference</a>
-                </div>
+                <span class="overline">Est. 2026 • Premium Solutions</span>
+                <h1>Crafting Sites That <br><span class="italic-serif">Command</span> Markets.</h1>
+                <p>We build high-performance digital identities for brands that refuse to settle for the ordinary.</p>
+                <a href="contact.html" class="btn-elite">Start Your Project</a>
             </div>
         </section>
 
-        <section class="grid-section container">
+        <section class="container grid-section">
             <div class="premium-card">
                 <span class="card-num">01</span>
-                <h3>Visual Mastery</h3>
-                <p>Award-winning aesthetics designed to build immediate market authority.</p>
+                <h3>Visual Authority</h3>
+                <p>Bespoke aesthetics designed to establish immediate trust and market leadership.</p>
             </div>
             <div class="premium-card">
                 <span class="card-num">02</span>
-                <h3>Lightning Flow</h3>
-                <p>Optimized architecture ensuring your site is as fast as your business moves.</p>
+                <h3>Elite Speed</h3>
+                <p>Architectural precision in code to ensure lightning-fast performance across all devices.</p>
             </div>
             <div class="premium-card">
                 <span class="card-num">03</span>
-                <h3>Result Focused</h3>
-                <p>Sophisticated funnels designed to turn clicks into high-ticket clients.</p>
+                <h3>Growth Driven</h3>
+                <p>Strategic user experiences designed to convert high-ticket visitors into loyal clients.</p>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container"><p>© 2026 TH WEB STUDIO. All rights reserved.</p></div>
-    </footer>
+    <footer><p>© 2026 TH WEB STUDIO. Precision in Digital.</p></footer>
 
-    <script src="script.js"></script>
+    <script>
+        const trigger = document.getElementById('menuTrigger');
+        const overlay = document.getElementById('navOverlay');
+        trigger.addEventListener('click', () => {
+            trigger.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
+        });
+    </script>
 </body>
 </html>
