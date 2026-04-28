@@ -1,9 +1,19 @@
+:root {
+  --primary: #6d5dfc;
+  --primary-glow: rgba(109, 93, 252, 0.4);
+  --accent: #00d4ff; /* A hint of cyan for that elite tech feel */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #0b1025, #05060c);
+  /* Updated font stack for a cleaner, premium look */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: radial-gradient(circle at 50% -20%, #161d3a, #05060c);
   color: white;
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
 /* ===== HEADER ===== */
@@ -11,121 +21,139 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 60px;
-  background: rgba(10, 12, 25, 0.6);
-  backdrop-filter: blur(20px);
+  padding: 10px 60px; /* Reduced padding since logo is huge */
+  background: rgba(5, 6, 12, 0.8);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--glass-border);
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
-/* ===== LOGO (ONLY UPGRADE) ===== */
+/* ===== LOGO UPGRADE ===== */
 .logo {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .logo img {
-  height: 170px; /* 🔥 BIG ELITE LOGO */
+  height: 140px; /* Adjusted slightly for better header balance */
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 25px rgba(120,120,255,0.45));
-  transition: 0.3s ease;
+  /* Sharper, more elegant glow */
+  filter: drop-shadow(0 0 15px var(--primary-glow));
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.logo img:hover {
-  transform: scale(1.08);
-}
-
-/* TEXT */
 .brand-title {
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.brand-sub {
-  font-size: 12px;
-  opacity: 0.6;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #fff, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ===== NAV ===== */
 nav a {
   color: white;
   text-decoration: none;
-  margin-left: 20px;
-  opacity: 0.7;
+  margin-left: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  transition: 0.3s ease;
 }
 
 nav a:hover {
   opacity: 1;
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary-glow);
 }
 
 /* ===== HERO ===== */
 .hero {
   text-align: center;
-  padding: 140px 20px;
+  padding: 180px 20px;
 }
 
 .hero h1 {
-  font-size: 55px;
+  font-size: clamp(40px, 8vw, 75px); /* Fluid typography */
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  line-height: 1.1;
 }
 
 .hero p {
-  opacity: 0.7;
-  max-width: 700px;
+  font-size: 1.1rem;
+  opacity: 0.6;
+  max-width: 600px;
   margin: auto;
+  font-weight: 300;
 }
 
-/* ===== BUTTON ===== */
+/* ===== PREMIUM BUTTON ===== */
 .btn {
   display: inline-block;
-  margin-top: 25px;
-  padding: 15px 30px;
-  background: #6d5dfc;
+  margin-top: 40px;
+  padding: 18px 45px;
+  background: var(--primary);
   color: white;
   text-decoration: none;
-  border-radius: 12px;
+  border-radius: 50px; /* Pill shape is more premium */
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 30px var(--primary-glow);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* ===== SECTIONS ===== */
-.section {
-  text-align: center;
-  padding: 100px 20px;
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px var(--primary-glow);
+  background: #7e70ff;
 }
 
-/* ===== CARDS ===== */
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
+/* ===== CARDS UPGRADE ===== */
 .card {
-  width: 280px;
-  padding: 30px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 15px;
+  width: 320px;
+  padding: 40px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  text-align: left; /* Alignment change for premium feel */
 }
 
-/* ===== FORM ===== */
-form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--primary);
+  transform: translateY(-10px);
 }
 
+.card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+/* ===== FORM UPGRADE ===== */
 input, textarea {
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: white;
+  border-radius: 12px;
+  outline: none;
+  transition: 0.3s;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 50px;
-  opacity: 0.5;
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.08);
 }
